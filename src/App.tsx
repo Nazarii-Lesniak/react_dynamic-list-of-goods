@@ -12,18 +12,24 @@ export const App: React.FC = () => {
   const [isError, setIsError] = useState(false);
 
   const handleLoadAll = () => {
+    setIsError(false);
+
     return getAll()
       .then(loadedGoods => setList(loadedGoods))
       .catch(() => setIsError(true));
   };
 
   const handleLoadFive = () => {
+    setIsError(false);
+
     return get5First()
       .then(loadedGoods => setList(loadedGoods))
       .catch(() => setIsError(true));
   };
 
   const handleLoadRed = () => {
+    setIsError(false);
+
     return getRedGoods()
       .then(loadedGoods => setList(loadedGoods))
       .catch(() => setIsError(true));
